@@ -2,20 +2,18 @@ import React from "react";
 import FeatureCard from "./FeatureCard";
 import { Tooltip } from "@mui/material";
 import Image from "next/image";
-import CTSkyWarsToolsDownload from "./CTSkyWarsToolsDownload";
+import ModDownload from "./ModDownload";
 
-const CTSkyWarsToolsPage = () => {
+const ModPage = () => {
 	return (
 		<div className="flex flex-col p-4 ">
-			<h1 className="text-4xl font-bold text-center my-2">CTSkyWarsTools</h1>
-			<span className="font-semibold text-center mb-2 px-3">
-				A ChatTrigger with various tools that come in handy when playing SkyWars
-			</span>
+			<h1 className="text-4xl font-bold text-center my-2">SkyWarsToolsMod</h1>
+			<span className="font-semibold text-center mb-2 px-3">1.8.9 Forge Mod with many QoL features for SkyWars</span>
 
 			<div className="flex gap-6 items-center justify-center">
 				<div className="flex gap-6 items-center">
 					<a
-						href="https://github.com/LukaDeVrij/CTSkyWarsTools"
+						href="https://github.com/devLukaDev/SkyWarsToolsMod"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="bg-content rounded-lg shadow-md flex items-center justify-center w-16 h-16 cursor-pointer animate-press transition aspect-square"
@@ -27,7 +25,7 @@ const CTSkyWarsToolsPage = () => {
 						</Tooltip>
 					</a>
 				</div>
-				<div className="flex gap-6 items-center">
+				{/* <div className="flex gap-6 items-center">
 					<a
 						href="https://www.youtube.com/watch?v=VAkqIGy7jlc"
 						target="_blank"
@@ -40,9 +38,9 @@ const CTSkyWarsToolsPage = () => {
 							</span>
 						</Tooltip>
 					</a>
-				</div>
+				</div> */}
 			</div>
-			<CTSkyWarsToolsDownload />
+			<ModDownload />
 			<div className="w-full overflow-x-auto rounded-xl py-4 lg:p-8">
 				<div className="flex flex-col gap-5">
 					<FeatureCard
@@ -52,7 +50,7 @@ const CTSkyWarsToolsPage = () => {
 						imageSrc="/CT_3.png"
 						imageAlt="Experience This Game display"
 						insideText="Default experience display"
-						outsideText="Can't be bothered to stay in the game to check your EXP for that game? CTSkyWarsTools can display your EXP for the current game wherever you want, so you can easily check it whenever you want."
+						outsideText="Can't be bothered to stay in the game to check your EXP for that game? SkyWarsToolsMod can display your EXP for the current game wherever you want, so you can easily check it whenever you want."
 					/>
 					<FeatureCard
 						cardOnLeft={true}
@@ -61,7 +59,7 @@ const CTSkyWarsToolsPage = () => {
 						imageSrc="/CT_1.webp"
 						imageAlt="Autododge example"
 						insideText="Autododge in action"
-						outsideText="Add maps you don't want to play to the blocklist, and CTSkyWarsTools will automatically dodge you from those maps. A sound plays, and you can sneak in order to cancel the dodge."
+						outsideText="Add maps you don't want to play to the blocklist, and SkyWarsToolsMod will automatically dodge you from those maps. A sound plays, and you can sneak in order to cancel the dodge."
 					/>
 					<FeatureCard
 						cardOnLeft={false}
@@ -81,14 +79,14 @@ const CTSkyWarsToolsPage = () => {
 						insideText="Output of /who"
 						outsideText="The /who command is enhanced to show the island relative to yours, from the perspective of mid. This can be wrong because Hypixel map builders sometimes build clockwise and sometimes counterclockwise, but it should be correct most of the time."
 					/>
-					<FeatureCard
+					{/* <FeatureCard
 						cardOnLeft={false}
 						size="large"
 						imageSrc="/CT_2.webp"
 						imageAlt="Settings overview"
 						insideText="CTSkyWarsTools Settings"
 						outsideText="You can enable and disable the various submodules of CTSkyWarsTools in the settings menu, as well as customize some of the features to your liking."
-					/>
+					/> */}
 				</div>
 				<div className="flex gap-6 items-center justify-center mt-4">
 					<div className="flex gap-6 items-center">
@@ -99,9 +97,7 @@ const CTSkyWarsToolsPage = () => {
 							className="bg-content rounded-lg shadow-md flex items-center justify-center w-16 h-16 cursor-pointer animate-press transition aspect-square"
 						>
 							<Tooltip title="Discord">
-								<span>
-									<Image src="/icons/discord.png" alt="GitHub" width={42} height={42} />
-								</span>
+								<Image src="/icons/discord.png" alt="GitHub" width={42} height={42} />
 							</Tooltip>
 						</a>
 					</div>
@@ -112,4 +108,4 @@ const CTSkyWarsToolsPage = () => {
 	);
 };
 
-export default CTSkyWarsToolsPage;
+export default ModPage;

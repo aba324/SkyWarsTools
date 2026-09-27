@@ -23,9 +23,9 @@ type ReleaseResponse = {
 	releases: Release[];
 };
 
-const RELEASE_API_URL = "https://api.skywarstools.com/api/ct/lastVersion";
+const RELEASE_API_URL = `${process.env.NEXT_PUBLIC_SKYWARSTOOLS_API}/api/ct/lastVersion`;
 
-const CTSkyWarsToolsDownload = () => {
+const ModDownload = () => {
 	const [includePrereleases, setIncludePrereleases] = useState(false);
 
 	const { data, isLoading, error } = useSWR<ReleaseResponse>(RELEASE_API_URL, fetcher, {
@@ -88,15 +88,13 @@ const CTSkyWarsToolsDownload = () => {
 			<div className="max-w-xl rounded-xl bg-black/10 px-4 py-3 text-left text-sm leading-6 text-white/75">
 				<p className="font-semibold text-white">Install instructions</p>
 				<ol className="mt-2 list-decimal space-y-1 pl-5">
-					<li>Download the archive from the button above.</li>
-					<li>Open Minecraft and type /ct files, navigate to the modules folder</li>
-					<li>Extract the ZIP-file into your ChatTriggers modules folder.</li>
-					<li>The folder called &apos;CTSkyWarsTools&apos; should be in modules.</li>
-					<li>In Minecraft, type /ct reload</li>
+					<li>Use Forge 1.8.9</li>
+					<li>Put the .jar in your mods folder</li>
+					<li>In game, send /swt or use RSHIFT to open up the config</li>
 				</ol>
 			</div>
 		</div>
 	);
 };
 
-export default CTSkyWarsToolsDownload;
+export default ModDownload;
