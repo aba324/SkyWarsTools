@@ -19,8 +19,6 @@ import useSWR from "swr";
 const GrimReaper: React.FC<OverallResponse> = (response) => {
 	const [combinedData, setCombinedData] = useState<DescentMap | null>(null);
 
-	// TODO somewhere here, scroll is reset for some reason
-	// start
 	const { data: descentData, error } = useSWR<DescentMap>("/json/descent.json", fetcher, {
 		revalidateOnFocus: false,
 		revalidateOnReconnect: false,

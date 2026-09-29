@@ -45,17 +45,8 @@ export function calcLevelOld(xp: number): number {
 }
 
 export function formatPlaytime(playtime: number): string {
-	const days = Math.floor(playtime / (24 * 3600));
-	playtime %= 24 * 3600;
 	const hours = Math.floor(playtime / 3600);
-	playtime %= 3600;
-	const minutes = Math.floor(playtime / 60);
-
-	const result = [];
-	if (days > 0) result.push(`${days}d`);
-	if (hours > 0) result.push(`${hours}h`);
-	result.push(`${minutes}m`);
-	return result.join(" ");
+	return `${hours}h`;
 }
 
 export function toCamelCase(input: string): string {
