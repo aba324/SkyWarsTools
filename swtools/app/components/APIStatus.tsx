@@ -8,7 +8,7 @@ type MetaDataResponse = {
 };
 
 const HypixelAPIDownNotice = () => {
-	const [apiStatus, setApiStatus] = React.useState<MetaDataResponse>();
+	const [apiStatus, setApiStatus] = React.useState<MetaDataResponse>({success: true});
 
 	React.useEffect(() => {
 		fetch(process.env.NEXT_PUBLIC_SKYWARSTOOLS_API + "/api/getMetadata" || "http://api.skywarstools.com/api/getMetadata", {
@@ -27,12 +27,13 @@ const HypixelAPIDownNotice = () => {
 			});
 	}, []);
 
-	if (!apiStatus || apiStatus.hypixelAPIOnline !== false) {
+	
+	if (apiStatus?.success == true || apiStatus?.hypixelAPIOnline === true) {
 		return null;
 	}
 	return (
 		<div className="w-fit m-auto mb-2 lg:mt-2 lg:rounded-xl font-bold p-3 border-red-500 border-2">
-			Hypixel's API is currently down, so some features may not work correctly.
+			Either my or Hypixel's API is currently down, so some features may not work correctly.
 		</div>
 	);
 
