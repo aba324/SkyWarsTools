@@ -54,7 +54,7 @@ const PlayerBanner: React.FC<PlayerBannerProps> = ({ playerName }) => {
 	const monthsSince = monthsSincePledge();
 
 	let url: string = "";
-	if (monthsSince > 0) {
+	if (monthsSince >= 0) {
 		url = "/icons/patreon/Gold.webp";
 	}
 	if (monthsSince > 5) {
